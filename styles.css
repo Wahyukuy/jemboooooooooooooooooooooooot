@@ -1,0 +1,67 @@
+/* Tema PMR — sederhana, responsif, warna merah + putih */
+:root{
+  --red:#c62828;
+  --dark:#222;
+  --muted:#666;
+  --bg:#fff;
+  --card-bg:#fafafa;
+  --max-width:1100px;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#fff 0%, #fff 60%, #fff 100%);
+  color:var(--dark);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+
+.site-header{background:var(--bg);border-bottom:4px solid rgba(198,40,40,0.08)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:0.75rem}
+.logo{width:54px;height:54px}
+.site-title{margin:0;font-size:1.25rem;color:var(--red)}
+.site-sub{margin:0;font-size:0.85rem;color:var(--muted)}
+
+nav a{margin-left:0.75rem;text-decoration:none;color:var(--dark);font-weight:600}
+nav a[aria-current="page"]{color:var(--red)}
+
+.hero{padding:2rem;margin:1rem 0;background:linear-gradient(90deg, rgba(198,40,40,0.06), rgba(198,40,40,0.02));border-radius:8px}
+.hero h2{margin-top:0;color:var(--red)}
+.btn{display:inline-block;background:var(--red);color:white;padding:0.5rem 0.9rem;border-radius:6px;border:none;text-decoration:none;cursor:pointer}
+.btn.small{padding:0.3rem 0.5rem;font-size:0.9rem}
+.btn.danger{background:#b71c1c}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.25rem 0}
+.card{background:var(--card-bg);padding:1rem;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.card h3{margin-top:0;color:var(--red)}
+
+.site-footer{border-top:1px solid #eee;padding:1rem;margin-top:2rem;text-align:center;color:var(--muted);font-size:0.9rem}
+
+/* Gallery styles */
+.upload-panel{background:#fff;padding:1rem;border-radius:8px;border:1px solid #f0f0f0;margin-bottom:1rem}
+.file-label{display:inline-block;padding:0.5rem 0.8rem;border:1px dashed #e0e0e0;border-radius:6px;cursor:pointer;margin-right:0.5rem}
+.file-label input{display:none}
+.form-row{display:flex;gap:0.5rem;margin-top:0.75rem}
+.form-row input[type="text"]{flex:1;padding:0.45rem;border:1px solid #ddd;border-radius:6px}
+.tenure-info{margin-top:0.75rem;display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap}
+.tenure-info input[type="date"]{padding:0.35rem;border:1px solid #ddd;border-radius:6px}
+
+/* Gallery grid */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.75rem;margin-top:0.75rem}
+.gallery-item{background:#fff;border:1px solid #eee;border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.gallery-item img{display:block;width:100%;height:160px;object-fit:cover}
+.gallery-item .meta{padding:0.5rem;font-size:0.85rem;color:var(--muted)}
+.controls{margin-top:0.75rem;display:flex;gap:0.5rem;flex-wrap:wrap}
+
+/* Responsive */
+@media (max-width:600px){
+  .header-inner{flex-direction:column;align-items:flex-start}
+  .brand{gap:0.5rem}
+}
