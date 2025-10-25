@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Galeri Foto Masa Jabatan — PMR</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="40" y="10" width="20" height="80" fill="#c62828"></rect>
+          <rect x="10" y="40" width="80" height="20" fill="#c62828"></rect>
+        </svg>
+        <div>
+          <h1 class="site-title">Galeri Foto Masa Jabatan</h1>
+          <p class="site-sub">Unggah dan simpan foto kegiatan selama 1 tahun</p>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Beranda</a>
+        <a href="gallery.html" aria-current="page">Galeri</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="upload-panel">
+      <h2>Unggah Foto</h2>
+      <p>Unggah foto kegiatan. Foto akan disimpan di penyimpanan lokal browser (localStorage) untuk keperluan dokumentasi lokal.</p>
+
+      <label class="file-label">
+        Pilih foto
+        <input id="photo-input" type="file" accept="image/*" multiple>
+      </label>
+
+      <div class="form-row">
+        <input id="photo-caption" type="text" placeholder="Keterangan singkat (opsional)" aria-label="Keterangan foto">
+        <button id="save-photo" class="btn">Simpan Foto</button>
+      </div>
+
+      <div class="tenure-info">
+        <label for="tenure-start">Mulai Masa Jabatan:</label>
+        <input id="tenure-start" type="date">
+        <label for="tenure-end">Akhir Masa Jabatan:</label>
+        <input id="tenure-end" type="date">
+        <button id="set-tenure" class="btn small">Set Masa Jabatan</button>
+      </div>
+
+    </section>
+
+    <section class="gallery-section">
+      <h2>Foto Tersimpan</h2>
+      <p id="gallery-count">Memuat foto...</p>
+      <div id="gallery" class="gallery-grid" aria-live="polite"></div>
+      <div class="controls">
+        <button id="clear-gallery" class="btn danger">Hapus Semua Foto</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>Foto disimpan di browser Anda. Untuk backup, unduh foto dari galeri setiap beberapa waktu.</small>
+    </div>
+  </footer>
+
+  <script src="assets/scripts.js" defer></script>
+</body>
+</html>
